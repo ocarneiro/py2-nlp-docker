@@ -1,0 +1,1 @@
+docker build -t custom_anaconda2 docker/

@@ -1,0 +1,1 @@
+docker stop conda2 && docker rm conda2

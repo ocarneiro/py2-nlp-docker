@@ -1,6 +1,14 @@
+# Dockerfile for Modern NLP with Python 2
+
+# Inspired by Patrick Harrison's talk
+# https://github.com/skipgram/modern-nlp-in-python/blob/master/executable/Modern_NLP_in_Python.ipynb
+
+# Based on Continuum's Anaconda image
+# https://hub.docker.com/r/continuumio/anaconda/
+
 FROM debian:8.5
 
-MAINTAINER Kamil Kwiek <kamil.kwiek@continuum.io>
+MAINTAINER Otavio Carneiro <otavio@carneiro.blog.br>
 
 ENV LANG=C.UTF-8 LC_ALL=C.UTF-8
 
@@ -24,7 +32,7 @@ ENV PATH /opt/conda/bin:$PATH
 
 RUN /bin/bash -c "/opt/conda/bin/conda install jupyter -y --quiet && mkdir /opt/notebooks"
 
-RUN conda install spacy && python -m spacy.en.download
+RUN conda install -y spacy && python -m spacy.en.download
 
 RUN conda install -y gensim
 
