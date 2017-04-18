@@ -40,6 +40,8 @@ RUN conda install -y -c memex pyldavis &&  \
 	conda install -y ipykernel &&  \
 	ipython kernel install --user
 
+RUN python -m nltk.downloader stopwords
+
 CMD ["jupyter", "notebook", "--no-browser", "--ip='*'", "--port=8888",  \
      "--notebook-dir=/opt/notebooks"]
 
